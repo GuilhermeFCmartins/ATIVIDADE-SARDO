@@ -12,7 +12,36 @@
 <body>
 
     <!-- divisão -->
+    <h1>Manipulando Variáveis com JavaScript</h1>
+    <p id="resultado">Aqui será exibido o valor da variável.</p>
+    <button onclick="atualizarValor()">Aumentar Valor</button>
+    <button onclick="diminuirValor()">Diminuir Valor</button>
 
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="imagem-ativa">
+                <img src="imagem1.jpg" alt="Imagem 1">
+            </div>
+            <div class="imagem-item1">
+                <img src="imagem2.jpg" alt="Imagem 2">
+            </div>
+            <div class="imagem-item2">
+                <img src="imagem3.jpg" alt="Imagem 3">
+            </div>
+        </div>
+        <button class="carousel-control prev" onclick="prevSlide()" onclick="atualizarValor()">Aumentar Valor
+            &#10094;</button>
+        <button class="carousel-control next" onclick="nextSlide()" onclick="diminuirValor()">Diminuir Valor
+            &#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
+</html>]
+
+
+
 
 </html>
