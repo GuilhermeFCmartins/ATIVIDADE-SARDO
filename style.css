@@ -36,3 +36,14 @@
 .padding {
     padding: 16px;
 }
+
+.rodape {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
