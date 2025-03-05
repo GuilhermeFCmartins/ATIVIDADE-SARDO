@@ -43,7 +43,7 @@
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
