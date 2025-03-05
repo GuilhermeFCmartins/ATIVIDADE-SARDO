@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .carrossel {
     display: flex;
     overflow: hidden;
@@ -46,4 +51,8 @@
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.img{
+    
 }
