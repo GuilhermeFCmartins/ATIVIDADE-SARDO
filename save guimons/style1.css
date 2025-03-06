@@ -7,6 +7,7 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
+
 }
 
 /* Estilo do Header */
@@ -133,15 +134,25 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+
 }
 
 .carousel {
+
     width: 600px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.carousel1 {
+
+    width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 .carousel-inner {
+
     display: flex;
     transition: transform 2s ease-in-out;
 }
@@ -177,4 +188,8 @@ body {
 
 .carousel-control.next {
     right: 10px;
+}
+
+.flex {
+    display: flex;
 }
