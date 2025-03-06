@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Carrosséis</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background: #f0f0f0;
+        }
+
+        .carousel {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 15px;
+            height: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .indicator.active {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Primeiro Carrossel -->
+    <div class="carousel">
+        <h2>Carrossel 1</h2>
+        <div class="slides">
+            <div class="slide"><img src="camisa_branca.png" alt="Slide 1">
+            </div>
+            <div class="slide"><img src="camisa_preta.png" alt="Slide 2">
+            </div>
+            <div class="slide"><img src="miranha.png" alt="Slide 3">
+            </div>
+            <div class="slide"><img src="camisa_preta2.png" alt="Slide 4">
+            </div>
+            <div class="slide"><img src="camisa_rosa.png" alt="Slide 5">
+            </div>
+        </div>
+        <button class="nav prev" onclick="changeSlide(this, -1)">&#10094;</button>
+        <button class="nav next" onclick="changeSlide(this, 1)">&#10095;</button>
+        <div class="indicators"></div>
+    </div>
+
+    <!-- Segundo Carrossel -->
+    <div class="carousel">
+        <h2>Carrossel 2</h2>
+        <div class="slides">
+            <div class="slide"><img src="jeans_preta.png" alt="Slide 4">
+            </div>
+            <div class="slide"><img src="moletom_branca.png" alt="Slide 5">
+            </div>
+            <div class="slide"><img src="moletom_preta.png" alt="Slide 6">
+            </div>
+            <div class="slide"><img src="bermuda_preta.png" alt="Slide 6">
+            </div>
+            <div class="slide"><img src="calca_jeans.png" alt="Slide 6">
+            </div>
+        </div>
+        <button class="nav prev" onclick="changeSlide(this, -1)">&#10094;</button>
+        <button class="nav next" onclick="changeSlide(this, 1)">&#10095;</button>
+        <div class="indicators"></div>
+    </div>
+
+    <!-- Terceiro Carrossel -->
+    <div class="carousel">
+        <h2>Carrossel 3</h2>
+        <div class="slides">
+            <div class="slide"><img src="https://via.placeholder.com/600x400/96ceb4/FFFFFF?text=Slide+7" alt="Slide 7">
+            </div>
+            <div class="slide"><img src="https://via.placeholder.com/600x400/ffeead/FFFFFF?text=Slide+8" alt="Slide 8">
+            </div>
+            <div class="slide"><img src="https://via.placeholder.com/600x400/ffcc5c/FFFFFF?text=Slide+9" alt="Slide 9">
+            </div>
+        </div>
+        <button class="nav prev" onclick="changeSlide(this, -1)">&#10094;</button>
+        <button class="nav next" onclick="changeSlide(this, 1)">&#10095;</button>
+        <div class="indicators"></div>
+    </div>
+
+    <script>document.querySelectorAll('.carousel').forEach(carousel => {
+            const slides = carousel.querySelectorAll('.slide');
+            const indicatorsContainer = carousel.querySelector('.indicators');
+            let currentIndex = 0;
+
+            // Cria os indicadores
+            slides.forEach((_, index) => {
+                const indicator = document.createElement('div');
+                indicator.className = 'indicator';
+                indicator.addEventListener('click', () => goToSlide(carousel, index));
+                indicatorsContainer.appendChild(indicator);
+            });
+
+            // Inicializa o primeiro slide
+            updateCarousel(carousel);
+        });
+
+        function updateCarousel(carousel) {
+            const slides = carousel.querySelectorAll('.slide');
+            const indicators = carousel.querySelectorAll('.indicator');
+            const slidesContainer = carousel.querySelector('.slides');
+
+            // Atualiza os slides
+            slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Atualiza os indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function changeSlide(button, direction) {
+            const carousel = button.closest('.carousel');
+            const slides = carousel.querySelectorAll('.slide');
+            currentIndex = carousel.currentIndex || 0;
+
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            carousel.currentIndex = currentIndex;
+            updateCarousel(carousel);
+        }
+
+        function goToSlide(carousel, index) {
+            currentIndex = index;
+            carousel.currentIndex = currentIndex;
+            updateCarousel(carousel);
+        }</script>
+</body>
+
+</html>
