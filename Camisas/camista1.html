@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Estilização do carrossel */
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Botões de navegação */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        #prev {
+            left: 10px;
+        }
+
+        #next {
+            right: 10px;
+        }
+
+        /* Indicadores de slides */
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            background-color: transparent;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: transparent;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.8s;
+        }
+
+        .dot.active {
+            background: transparent;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        .montagem {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .alinhar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+            display: block;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="montagem">
+            <h2>
+                MONTAGEM DE KITS
+
+            </h2>
+        </div>
+    </header>
+    <div class="carousel">
+        <div class="slides img" id="slides">
+            <div class="slide"><img src="camisa_1.png" alt="Imagem 1">
+                <div class="alinhar">PREÇO</div>
+            </div>
+            <div class="slide img"><img src="camisa_2.png" alt="Imagem 2">
+                <div class="alinhar"> PREÇO</div>
+            </div>
+            <div class="slide img"><img src="camisa_3.png" alt="Imagem 3">
+                <div class="alinhar"> PREÇO</div>
+            </div>
+            <div class="slide img"><img src="camisa_4.png" alt="Imagem 4">
+                <div class="alinhar">PREÇO</div>
+            </div>
+        </div>
+
+        <button class="nav-button" id="prev">&#10094;</button>
+        <button class="nav-button" id="next">&#10095;</button>
+
+        <div class="dots" id="dots"></div>
+
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const dotsContainer = document.getElementById('dots');
+
+        // Cria os indicadores de slide
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll('.dot');
+        dots[0].classList.add('active');
+
+        // Atualiza o carrossel
+        function updateCarousel() {
+            document.getElementById('slides').style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Navegação anterior
+        document.getElementById('prev').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        // Navegação próxima
+        document.getElementById('next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        // Função para ir para um slide específico
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+
+    </script>
+
+</body>
+
+</html>
