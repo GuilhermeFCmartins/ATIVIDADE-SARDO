@@ -15,16 +15,14 @@
             <div>
                 <ul>
 
-
-
                     <div class="padding">
-                        <li><a href="#sobre">
+                        <li><a href="#">
                                 <h1> Sobre </h1>
                             </a></li>
                     </div>
                     <div class="padding">
-                        <li><a href="#Produtos">
-                                <h1>rodutos </h1>
+                        <li><a href="#">
+                                <h1>Montagem </h1>
                             </a></li>
                     </div>
                     <div class="padding">
@@ -32,6 +30,39 @@
                                 <h1>Contato </h1>
                             </a></li>
                     </div>
+
+                    <!-- Botão Principal -->
+                    <button class="btn-main" onclick="toggleButtons()">
+                        <h1>Produtos</h1>
+                    </button>
+
+                    <!-- Container dos 3 Botões -->
+                    <div class="buttons-container">
+                        <div class="padding">
+                            <li><a href="#camisas">
+                                    <h3> Camisas </h3>
+                                </a></li>
+                        </div>
+
+                        <div class="padding">
+                            <li><a href="#calças">
+                                    <h3> Calças </h3>
+                                </a></li>
+                        </div>
+
+                        <div class="padding">
+                            <li><a href="#acessorios">
+                                    <h3> Acessorios </h3>
+                                </a></li>
+                        </div>
+
+                    </div>
+
+                    <script>function toggleButtons() {
+                            const container = document.querySelector('.buttons-container');
+                            container.classList.toggle('active');
+                        }
+                    </script>
 
                 </ul>
             </div>
@@ -43,41 +74,43 @@
 
     <div class="container">
         <section>
-            <div class="carousel">
-                <div class="carouselitem">
-                    <div class="img flex">
-                        <div class="imagem img">
-                            <img src="Camisas/camisa_1.png">
-                            <div class="preço flex">
-                                <a href="camisa1.html">
-                                    <h3> Camiseta preta Básica RS <br> 89,90</h3>
-                                </a>
+            <div id="camisas">
+                <div class="carousel">
+                    <div class="carouselitem">
+                        <div class="img flex">
+                            <div class="imagem img">
+                                <img src="Camisas/camisa_1.png">
+                                <div class="preço flex">
+                                    <a href="camisa1.html">
+                                        <h3> Camiseta preta Básica RS <br> 89,90</h3>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="imagem img">
-                            <img src="Camisas/camisa_2.png">
-                            <div class="preço flex">
-                                <a href="camisa2.html">
-                                    <h3> Camiseta preta Básica NIKE RS 119,90</h3>
-                                </a>
+                            <div class="imagem img">
+                                <img src="Camisas/camisa_2.png">
+                                <div class="preço flex">
+                                    <a href="camisa2.html">
+                                        <h3> Camiseta preta Básica NIKE RS 119,90</h3>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="imagem img">
+                                <img src="Camisas/camisa_3.png">
+                                <div class="preço flex">
+                                    <a href="camisa2.html">
+                                        <h3> Camiseta branca Básica RS <br> 89,90</h3>
+                                    </a>
+                                </div>
                             </div>
 
-                        </div>
-                        <div class="imagem img">
-                            <img src="Camisas/camisa_3.png">
-                            <div class="preço flex">
-                                <a href="camisa2.html">
-                                    <h3> Camiseta branca Básica RS <br> 89,90</h3>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="imagem img">
-                            <img src="Camisas/camisa_4.png">
-                            <div class="preço flex">
-                                <a href="camisa2.html">
-                                    <h3> Camiseta rosa Básica RS <br> 89,90</h3>
-                                </a>
+                            <div class="imagem img">
+                                <img src="Camisas/camisa_4.png">
+                                <div class="preço flex">
+                                    <a href="camisa2.html">
+                                        <h3> Camiseta rosa Básica RS <br> 89,90</h3>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -136,36 +169,37 @@
 
 
         <section>
-
-            <div class="carousel">
-                <div class="carouselitem">
-                    <div class="img flex">
-                        <div class="imagem img">
-                            <img src="Acessório/bone_azul.png">
-                            <div class="preço flex">
-                                <a href="camisa1.html">
-                                    <h3> Boné Azul - ESPECIAL EDITION <br> 59,90</h3>
-                                </a>
+            <div id="acessorios">
+                <div class="carousel">
+                    <div class="carouselitem">
+                        <div class="img flex">
+                            <div class="imagem img">
+                                <img src="Acessório/bone_azul.png">
+                                <div class="preço flex">
+                                    <a href="camisa1.html">
+                                        <h3> Boné Azul - ESPECIAL EDITION <br> 59,90</h3>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="imagem img">
-                            <img src="Acessório/bone_preto.png">
-                            <div class="preço flex">
-                                <a href="camisa2.html">
-                                    <h3> Boné Preto - ESPECIAL EDITION<br> 59,90</h3>
-                                </a>
+                            <div class="imagem img">
+                                <img src="Acessório/bone_preto.png">
+                                <div class="preço flex">
+                                    <a href="camisa2.html">
+                                        <h3> Boné Preto - ESPECIAL EDITION<br> 59,90</h3>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="imagem img">
+                                <img src="Acessório/colar.png">
+                                <div class="preço flex">
+                                    <a href="camisa2.html">
+                                        <h3> Colar pingetes PRATA <br> 189,90</h3>
+                                    </a>
+                                </div>
                             </div>
 
                         </div>
-                        <div class="imagem img">
-                            <img src="Acessório/colar.png">
-                            <div class="preço flex">
-                                <a href="camisa2.html">
-                                    <h3> Colar pingetes PRATA <br> 189,90</h3>
-                                </a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
