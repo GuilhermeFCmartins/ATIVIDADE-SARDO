@@ -7,6 +7,43 @@
     display: flex;
 }
 
+.btn-main {
+    padding: 15px 30px;
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 0px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+.buttons-container.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.1);
+}
 
 .navbar {
     background-color: darkslategray;
