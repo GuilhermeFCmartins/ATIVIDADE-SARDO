@@ -2,198 +2,147 @@
 <html>
 
 <head>
-    <style>
-        body {
-            background-color: lightgray;
-        }
-
-        .carousel-container {
-            max-width: 450px;
-            max-height: 300px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            min-width: 100%;
-            padding: 15px;
-            box-sizing: border-box;
-
-            max-width: 500px;
-            max-height: 600px;
-        }
-
-        .slide img {
-            width: 100%;
-            display: block;
-        }
-
-        /* Botões de navegação aprimorados */
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 12px 18px;
-            cursor: pointer;
-            border-radius: 50%;
-            font-size: 20px;
-            transition: 0.3s;
-            z-index: 10;
-        }
-
-        .nav-btn:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        .prev {
-            left: 20px;
-        }
-
-        .next {
-            right: 20px;
-        }
-
-        /* Indicadores de slide */
-        .dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            z-index: 10;
-        }
-
-        .dot {
-            width: 14px;
-            height: 14px;
-            background: transparent;
-            border-radius: 50%;
-            margin: 0 6px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .dot.active {
-            background: transparent;
-            transform: scale(1.2);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Sardo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Primeiro Carrossel -->
-    <div class="carousel-container">
-        <h2></h2>
-        <div class="carousel" id="carousel1">
-            <div class="slides">
-                <div class="slide"><img src="Acessório/bone_azul.png" alt="Bone Azul"></div>
-                <div class="slide"><img src="Acessório/bone_preto.png" alt="Bone Preto"></div>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div>
+                    <ul>
+                        <div class="padding">
+                            <li><a href="site.html">
+                                    <h1> inicio </h1>
+                                </a></li>
+                        </div>
+                        <div class="padding">
+                            <li><a href="sobre.html">
+                                    <h1>Sobre </h1>
+                                </a></li>
+                        </div>
+                        <div class="padding">
+                            <li><a href="#contato">
+                                    <h1>Contato </h1>
+                                </a></li>
+                        </div>
 
-                <div class="slide"><img src="" <p>Vazio</p>
+                    </ul>
                 </div>
-            </div>
-            <button class="nav-btn prev" data-carousel="1" data-direction="prev">&#10094;</button>
-            <button class="nav-btn next" data-carousel="1" data-direction="next">&#10095;</button>
-            <div class="dots" id="dots1"></div>
+
+            </nav>
+        </header>
+        <div class="center">
+            <h1>Montagem de combinações</h1>
         </div>
-    </div>
 
-    <!-- Segundo Carrossel -->
-    <div class="carousel-container">
-        <h2></h2>
-        <div class="carousel" id="carousel2">
-            <div class="slides">
-                <div class="slide"><img src="Camisas/camisa_1.png" alt="Serviço A"></div>
-                <div class="slide"><img src="Camisas/camisa_2.png" alt="Serviço B"></div>
-                <div class="slide"><img src="Camisas/camisa_3.png" alt="Serviço C"></div>
-                <div class="slide"><img src="Camisas/camisa_4.png" alt="Serviço D"></div>
+        <div class="carousel-container-bone">
+            <h2></h2>
+            <div class="carousel" id="carousel1">
+                <div class="slides">
+                    <div class="slide"><img src="Acessório/bone_azul.png" alt="Bone Azul"></div>
+                    <div class="slide"><img src="Acessório/bone_preto.png" alt="Bone Preto"></div>
+
+                    <div class="slide"><img src="" <p>Vazio</p>
+                    </div>
+                </div>
+                <button class="nav-btn prev" data-carousel="1" data-direction="prev">&#10094;</button>
+                <button class="nav-btn next" data-carousel="1" data-direction="next">&#10095;</button>
+                <div class="dots" id="dots1"></div>
             </div>
-            <button class="nav-btn prev" data-carousel="2" data-direction="prev">&#10094;</button>
-            <button class="nav-btn next" data-carousel="2" data-direction="next">&#10095;</button>
-            <div class="dots" id="dots2"></div>
         </div>
-    </div>
 
-    <!-- Terceiro Carrossel -->
-    <div class="carousel-container">
-        <h2></h2>
-        <div class="carousel" id="carousel3">
-            <div class="slides">
-                <div class="slide"><img src="Calças/calça_1.png" alt="Parceiro 1"></div>
-                <div class="slide"><img src="Calças/calça_2.png" alt="Parceiro 2"></div>
-                <div class="slide"><img src="Calças/moletom_1.png" alt="Parceiro 3"></div>
-                <div class="slide"><img src="Calças/moletom_2.png" alt="Parceiro 4"></div>
+        <!-- Segundo Carrossel -->
+        <div class="carousel-container">
+            <h2></h2>
+            <div class="carousel" id="carousel2">
+                <div class="slides">
+                    <div class="slide"><img src="Camisas/camisa_1.png" alt="Serviço A"></div>
+                    <div class="slide"><img src="Camisas/camisa_2.png" alt="Serviço B"></div>
+                    <div class="slide"><img src="Camisas/camisa_3.png" alt="Serviço C"></div>
+                    <div class="slide"><img src="Camisas/camisa_4.png" alt="Serviço D"></div>
+                </div>
+                <button class="nav-btn prev" data-carousel="2" data-direction="prev">&#10094;</button>
+                <button class="nav-btn next" data-carousel="2" data-direction="next">&#10095;</button>
+                <div class="dots" id="dots2"></div>
             </div>
-            <button class="nav-btn prev" data-carousel="3" data-direction="prev">&#10094;</button>
-            <button class="nav-btn next" data-carousel="3" data-direction="next">&#10095;</button>
-            <div class="dots" id="dots3"></div>
         </div>
-    </div>
 
-    <script>
-        document.querySelectorAll('.carousel').forEach(carousel => {
-            const id = carousel.id.replace('carousel', '');
-            const slides = carousel.querySelector('.slides');
-            const dotsContainer = carousel.querySelector('.dots');
-            const totalSlides = slides.children.length;
+        <!-- Terceiro Carrossel -->
+        <div class="carousel-container">
+            <h2></h2>
+            <div class="carousel" id="carousel3">
+                <div class="slides">
+                    <div class="slide"><img src="Calças/calça_1.png" alt="Parceiro 1"></div>
+                    <div class="slide"><img src="Calças/calça_2.png" alt="Parceiro 2"></div>
+                    <div class="slide"><img src="Calças/moletom_1.png" alt="Parceiro 3"></div>
+                    <div class="slide"><img src="Calças/moletom_2.png" alt="Parceiro 4"></div>
+                </div>
+                <button class="nav-btn prev" data-carousel="3" data-direction="prev">&#10094;</button>
+                <button class="nav-btn next" data-carousel="3" data-direction="next">&#10095;</button>
+                <div class="dots" id="dots3"></div>
+            </div>
 
-            let currentSlide = 0;
+        </div>
 
-            // Cria os indicadores
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'dot';
-                dot.addEventListener('click', () => goToSlide(i));
-                dotsContainer.appendChild(dot);
-            }
 
-            const dots = dotsContainer.querySelectorAll('.dot');
-            dots[0].classList.add('active');
+        <script>
+            document.querySelectorAll('.carousel').forEach(carousel => {
+                const id = carousel.id.replace('carousel', '');
+                const slides = carousel.querySelector('.slides');
+                const dotsContainer = carousel.querySelector('.dots');
+                const totalSlides = slides.children.length;
 
-            function updateCarousel() {
-                slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
-                });
-            }
+                let currentSlide = 0;
 
-            function goToSlide(index) {
-                currentSlide = index;
-                updateCarousel();
-            }
+                // Cria os indicadores
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    dot.addEventListener('click', () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                }
 
-            // Adiciona eventos aos botões
-            carousel.querySelectorAll('.nav-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    const direction = button.getAttribute('data-direction');
-                    if (direction === 'prev') {
-                        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                    } else {
-                        currentSlide = (currentSlide + 1) % totalSlides;
-                    }
+                const dots = dotsContainer.querySelectorAll('.dot');
+                dots[0].classList.add('active');
+
+                function updateCarousel() {
+                    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentSlide);
+                    });
+                }
+
+                function goToSlide(index) {
+                    currentSlide = index;
                     updateCarousel();
+                }
+
+                // Adiciona eventos aos botões
+                carousel.querySelectorAll('.nav-btn').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const direction = button.getAttribute('data-direction');
+                        if (direction === 'prev') {
+                            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                        } else {
+                            currentSlide = (currentSlide + 1) % totalSlides;
+                        }
+                        updateCarousel();
+                    });
                 });
+
+
             });
+        </script>
 
 
-        });
-    </script>
 
-</body>
+
+
+    </body>
 
 </html>
